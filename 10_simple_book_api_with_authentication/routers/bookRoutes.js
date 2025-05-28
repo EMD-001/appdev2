@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bookController = require('../controllers/bookController');
-const authenticate = require('../middleware/jwt-token'); // Import the middleware
-
-
-router.use(authenticate); 
+const { authenticateToken } = require('../middlewares/jwt-token');  
+router.use(authenticateToken);  
 
 router.get('/', bookController.getAllBooks);
 router.get('/:id', bookController.getBookById);

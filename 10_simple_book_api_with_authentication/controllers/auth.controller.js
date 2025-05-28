@@ -1,7 +1,7 @@
 const { signUpSchema, signInSchema } = require("../middlewares/auth-validator.middleware");
 const { hashing, hashValidation } = require("../utils/hashing.util");
-const { generateAccessToken } = require("../middlewares/jwt-token.middleware");
-const User = require("../models/user.model");
+const { generateAccessToken } = require("../middlewares/jwt-token");
+const User = require('../models/user');
 
 
 const signUp = async (req, res) => {
